@@ -1,11 +1,13 @@
-
-const Pizza = ({name, ingredients, picture}) => {
+const Pizza = ({name, ingredients, picture, price, soldOut}) => {
     return (
-        <div>
-            <img src={picture} />
+        <li className={`pizza ${soldOut && 'sold-out' }`}>
+            <img src={picture} alt={name}/>
+            <div>
             <h3>{name}</h3>
             <p>{ingredients}</p>
-        </div>
+            <span>{!soldOut ? price : 'SOLD OUT'}</span>
+            </div>
+        </li>
     )
 }
 
